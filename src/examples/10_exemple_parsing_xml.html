@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="result"></div>
+ 
+<script>
+var aXMLString = '<personnes><personne><nom>John</nom><prenom>Doe</prenom><age>31</age></personne><personne><nom>Mike</nom><prenom>Bonnie</prenom><age>42</age></personne></personnes>';
+var xmlDoc = new DOMParser().parseFromString(aXMLString, 'text/xml');
+var txt = "",
+		x = xmlDoc.getElementsByTagName("personne"),
+    i;
+for (i = 0; i < x.length; i++) {
+	txt = txt + x[i].childNodes[0].textContent + "<br>";
+}
+
+document.getElementById('result').innerHTML = txt;
+</script>
+
+</body>
+</html>

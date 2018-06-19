@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<ol id="result"></ol>
+ 
+<script>
+var personne = {
+    nom: 'John',
+    prenom: 'Doe',
+    age: 35,
+    getFullName: function(){
+        return this.nom + " " + this.prenom;
+    },
+    getAge: function(){
+        return this.age;
+    },
+};
+console.log('Nom complet: ' + personne.getFullName());
+
+console.log('Age: ' + personne.getAge());
+</script>
+
+</body>
+</html>

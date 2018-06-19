@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<style>
+	#result{
+  color: red;
+}
+</style>
+<body>
+	<div id="content">
+
+		<div id="content">
+  <div id="div1">Div 1</div>
+  <div id="div2">Div 2</div>
+</div>
+<button id="myButtonGDiv1">Get Div 1</button>
+<button id="myButtonGDiv2">Get Div 2</button>
+<div id="result"></div>
+</body>
+<script>
+	var aContainer = document.getElementById('content');
+	var aResult = document.getElementById('result');
+	var aButtonGDiv1 = document.getElementById('myButtonGDiv1');
+	var aButtonGDiv2 = document.getElementById('myButtonGDiv2');
+	function showDiv1() {
+	    var aDiv1 = aContainer.firstElementChild;
+	    aResult.innerHTML = aDiv1.innerHTML;
+	}
+
+	function showDiv2() {
+	    var aDiv2 = aContainer.lastElementChild;
+	    aResult.innerHTML = aDiv2.innerHTML;
+	}
+
+	aButtonGDiv1.onclick = showDiv1;
+	aButtonGDiv2.onclick = showDiv2;
+
+
+</script>
+</html>

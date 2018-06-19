@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	<div id="content">Div Content</div>
+	<section>Section Content</section>
+	<span class="elementClass">P Content</span>
+	<a href="https://jsfiddle.net/wfajpro/dj06ybgc/">https://jsfiddle.net/wfajpro/dj06ybgc/</a>
+</body>
+<script>
+	var colors = ['color: red;', 'color: blue;', 'color: green;']
+	// Id / Class / TagName
+	var aDivId 					= document.getElementById('content');
+	var aSectionTagName = document.getElementsByTagName('section')[0];
+	var aSpanClassName	= document.getElementsByClassName('elementClass')[0];
+
+	console.log('%caDivId: ' + aDivId.innerHTML, colors[0]);
+	console.log('%caSectionTagName: ' + aSectionTagName.innerHTML, colors[1]);
+	console.log('%caSpanClassName: ' + aSpanClassName.innerHTML, colors[2]);
+
+	// querySelector using CSS Selectors
+	var aDivQS					= document.querySelector('#content');
+	var aSectionQS 			= document.querySelector('section');
+	var aSpanQS					= document.querySelector('.elementClass');
+
+	console.log('%caDivQS: ' + aDivQS.innerHTML, colors[0]);
+	console.log('%caSectionQS: ' + aSectionQS.innerHTML, colors[1]);
+	console.log('%caSpanQS: ' + aSpanQS.innerHTML, colors[2]);
+
+	// querySelectorAll using CSS Selectors
+	var aDivQSAll				= document.querySelectorAll('#content')[0];
+	var aSectionQSAll		= document.querySelectorAll('section')[0];
+	var aSpanQSAll			= document.querySelectorAll('.elementClass')[0];
+
+	console.log('%caDivQSAll: ' + aDivQSAll.innerHTML, colors[0]);
+	console.log('%caSectionQSAll: ' + aSectionQSAll.innerHTML, colors[1]);
+	console.log('%caSpanQSAll: ' + aSpanQSAll.innerHTML, colors[2]);
+</script>
+</html>

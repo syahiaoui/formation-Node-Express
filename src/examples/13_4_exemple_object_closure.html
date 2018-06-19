@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<ol id="result"></ol>
+ 
+<script>
+var personne = (function () {
+    var personne = {
+    nom: 'John',
+    prenom: 'Doe',
+    age: 35
+};
+    return function () {
+    	return {
+          getNom: function(){return personne.nom;},
+          setNom: function(value){ personne.nom = value;},
+          getPrenom: function(){return personne.prenom;}
+        };
+    }
+})();
+var pers = personne();
+console.log(pers.getNom() + ' ' + pers.getPrenom());
+pers.setNom('Alex');
+console.log(pers.getNom() + ' ' + pers.getPrenom());
+</script>
+
+</body>
+</html>

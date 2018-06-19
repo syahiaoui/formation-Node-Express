@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="result"></div>
+ 
+<script>
+var jsonString = '{"personnes":[{"nom": "John", "prenom": "Doe", "age": "31"}, {"nom": "Mike", "prenom": "Bonnie", "age": 42}]}';
+var jsonObject = JSON.parse(jsonString);
+var txt = "",
+		x = jsonObject.personnes,
+    i;
+    console.log(x)
+for (i = 0; i < x.length; i++) {
+	txt = txt + x[i].nom + "<br>";
+}
+
+document.getElementById('result').innerHTML = txt;
+</script>
+
+</body>
+</html>

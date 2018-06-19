@@ -1,0 +1,8 @@
+version: '2'
+services:
+  formation-node:
+    image: docker-app.registry.integ.fr.auchan.com/id-training/formation-node-express:latest
+    stdin_open: true
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always

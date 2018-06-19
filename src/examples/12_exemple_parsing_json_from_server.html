@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<ol id="result"></ol>
+ 
+<script>
+var root = 'https://jsonplaceholder.typicode.com';
+
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+	if (this.readyState == 4 && this.status == 200) {
+		handleResponse(this.response);
+	}
+};
+xhttp.open('GET', root + '/posts', true);
+xhttp.send();
+
+
+function handleResponse(data){
+  var i,
+  		txt = '',
+      obj = JSON.parse(data);
+  for (i = 0; i < obj.length; i++) {
+    txt = txt + "<li>" + obj[i].title + "</li>";
+  }
+  document.getElementById('result').innerHTML = txt;
+}
+</script>
+
+</body>
+</html>

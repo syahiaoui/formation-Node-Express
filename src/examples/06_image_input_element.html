@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<style>
+	img{
+	  width : 100px;
+	}
+	input{
+	  width: 300px;
+	}
+</style>
+<body>
+	<div id="content">
+	  
+	</div>
+	<input type="text" id="myInputText" placeholder="Enter an Image path then click the button"/><br><br>
+	<button id="myButton">Add Image</button>
+</body>
+<script>
+	function addImage(){
+		var aContainer = document.getElementById("content");
+		var aImg = document.createElement("IMG")
+		var aInput = document.getElementById("myInputText");
+		aImg.src = aInput.value;
+		aContainer.appendChild(aImg);
+	}
+
+	var aButton = document.getElementById("myButton");
+	aButton.onclick = addImage;
+
+	//image exemple
+	// http://wallpaper-gallery.net/images/image/image-13.jpg
+</script>
+</html>

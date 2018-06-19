@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	<div id='content'>
+	  <div id='div1'>Div 1</div>
+	  <div id='div2'>Div 2</div>
+	</div>
+	<br>
+	<button id='remplacerBtn'>Remplacer</button>
+	<button id='supprimerBtn'>Supprimer</button>
+</body>
+<script>
+	function remplacerDiv(){
+		var aContent = document.getElementById('content');
+	  var aOldDiv1 = document.getElementById('div1');
+		var aNewDiv = document.createElement('DIV');
+	  aNewDiv.setAttribute('id', 'myNewSpan');
+	  aNewDiv.innerHTML = 'Je remplace le Div 1 !';
+		aContent.replaceChild(aNewDiv, aOldDiv1);
+	}
+
+	function supprimerDiv(){
+		var aContent = document.getElementById('content');
+	  var aOldDiv2 = document.getElementById('div2');
+	  
+		aContent.removeChild(aOldDiv2);
+	}
+
+	var aRemplacerButton = document.getElementById('remplacerBtn');
+	aRemplacerButton.addEventListener('click', remplacerDiv);
+
+	var aSupprimerButton = document.getElementById('supprimerBtn');
+	aSupprimerButton.addEventListener('click', supprimerDiv);
+</script>
+</html>

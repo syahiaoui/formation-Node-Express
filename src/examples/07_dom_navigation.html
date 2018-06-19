@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<style>
+	img{
+	  width : 100px;
+	}
+	input{
+	  width: 300px;
+	}
+</style>
+<body>
+	<div id="content">
+
+		<div id="div1">
+	    	<div id="div1.1">Div 1.1</div>
+	    	<div id="div1.2">Div 1.2</div>
+	    </div>
+	  <div id="div2">
+	    <div id="div2.1">Div 2.1</div>
+	  </div>
+	</div>
+	<div id="result"></div>
+</body>
+<script>
+	var aContainer = document.getElementById('content');
+var aResult = document.getElementById('result');
+var aButtonChildNodes = document.getElementById('myButtonChildNodes');
+var aButtonChildren = document.getElementById('myButtonChildren');
+function showChildNodes() {
+    var aChildNodes = aContainer.childNodes;
+    var txt = "";
+    var i;
+    for (i = 0; i < aChildNodes.length; i++) {
+        txt = txt + aChildNodes[i].nodeName + "<br>";
+    }
+    aResult.innerHTML = txt;
+}
+
+function showChildren() {
+    var aChildNodes = aContainer.children;
+    var txt = "";
+    var i;
+    for (i = 0; i < aChildNodes.length; i++) {
+        txt = txt + aChildNodes[i].nodeName + "<br>";
+    }
+    aResult.innerHTML = txt;
+}
+
+aButtonChildNodes.onclick = showChildNodes;
+aButtonChildren.onclick = showChildren;
+
+</script>
+</html>

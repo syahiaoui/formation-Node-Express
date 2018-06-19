@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<ol id="result"></ol>
+ 
+<script>
+var personne = Object.create({}, {   nom: { writable: true, configurable: false, value: 'John' },
+  prenom: { writable: false, configurable: true, value: 'Doe' },
+	age: {writable: true, configurable: true, value: 35 },
+  getFullName: { value : function () { return this.nom + " " + this.prenom;}},
+  getAge: { value : function () {return this.age;}}
+});
+
+delete personne.nom;
+personne.prenom = 'Dane';
+
+console.log('Nom complet: ' + personne.getFullName());
+console.log('Age: ' + personne.getAge());
+</script>
+
+</body>
+</html>

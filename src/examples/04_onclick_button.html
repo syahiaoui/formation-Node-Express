@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	<div id='content'>
+		<button id='myButton'>My Button</button>
+	</div>
+</body>
+<script>
+	var addSpan = function() {
+		console.log("I'm a Click handler");
+	};
+
+	var aButton = document.getElementById('myButton');
+	aButton.addEventListener('click', addSpan);
+
+	// or
+	//aButton.onclick = addSpan;
+</script>
+</html>
