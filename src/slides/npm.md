@@ -54,7 +54,7 @@ Exemple de package.json:
   },
   "repository": {
     "type": "git",
-    "url": "git@gitlab.dev.fr.auchan.com:id-training/formation-node-express-tp1.git"
+    "url": "git@gitlabXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
   },
   "author": "syahiaoui",
   "license": "ISC"

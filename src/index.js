@@ -1,7 +1,7 @@
-(function(){
+(()=>{
 	console.log(SLIDES_DATA)
-	var aSlides = document.querySelector('div.slides');
-	var i,
+	let aSlides = document.querySelector('div.slides');
+	let i,
 		aTabOfSlides = SLIDES_DATA.slides,
 		aLength = aTabOfSlides.length,
 		path = "/src/slides/",

@@ -18,7 +18,7 @@ Une Promise est dans un <em style="color: red">état</em>, et un <em style="colo
 <em style="color: blue">Créer une Promise</em> <br/>
 La <em style="color: red">fonction</em> suivante <em style="color: green">renvoie</em> un <em style="color: green">résultat</em> de manière <em style="color: magentas">asynchrone</em>, via une <em style="color: red">promise</em>:
 ```js
-const asyncFunc = new Promise(
+const asyncFunc = return new Promise(
          (resolve, reject) => {
             ···
             resolve(result);
@@ -98,3 +98,36 @@ node promise.js
 ```
 Pour <em style="color: magenta">visualiser le résultat</em> aller sur l'url:<br/>
 http://localhost:3000
+
+<nsv>
+<em style="color: blue">Lire un fichier en utilisant promisify(1)</em> <br/>
+On peut lire un fichier en utilisant la fonction <em style="color: green">promisify</em> disponible dans le module <em style="color: red">util</em> 
+
+```js
+const fs = require('fs'),
+    util = require('util');
+//promesify readFile function
+const readFilePromise = util.promisify(fs.readFile);
+
+readFilePromise('./test.txt')
+    .then((result) => console.log(result.toString()))
+    .catch((error) => console.log(error));
+```
+
+<nsv>
+<em style="color: blue">Lire un fichier en utilisant promisify(2)</em> <br/>
+A partir de la version <em style="color: red">7.6.X</em> de Node.js, on peut utiliser <em style="color: green">async/await</em> pour <em style="color: green">consommer</em> une promise.
+
+```js
+const processFile = async () => {
+    try {
+        let data = await readFilePromise('./test.txt');
+        console.log(data.toString());
+    } catch (error) {
+        console.error(error)
+    }
+}
+processFile();
+```
+*** <em style="color: red">Remarque</em> *** <br/>
+Le mor clé <em style="color: #01B0F0">await</em> est utilisé uniquement dans une fonction précédée par le mot <em style="color: green">async</em>.
